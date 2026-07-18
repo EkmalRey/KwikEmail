@@ -12,10 +12,6 @@ The desktop dashboard keeps addresses, messages, and the selected email visible 
 
 ![KwikEmail desktop dashboard with sanitized example inboxes](docs/assets/dashboard-desktop.png)
 
-On mobile, the same inbox becomes a focused single-pane flow.
-
-<p align="center"><img src="docs/assets/dashboard-mobile.png" width="390" alt="KwikEmail mobile message list with sanitized example inboxes" /></p>
-
 ## Features
 
 - Create disposable addresses on domains you control.
