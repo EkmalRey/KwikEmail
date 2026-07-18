@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: packages/backend/package-lock.json
+      - run: npm ci
+        working-directory: packages/backend
+      - run: npm test
+        working-directory: packages/backend
+      - run: npm run typecheck
+        working-directory: packages/backend
+      - run: npx wrangler deploy --dry-run
+        working-directory: packages/backend
+      - run: npm test
+        working-directory: packages/frontend
+      - run: docker compose config --quiet
+      - run: docker compose build

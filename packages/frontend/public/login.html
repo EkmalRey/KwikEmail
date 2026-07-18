@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Sign in to KwikEmail." /><title>KwikEmail · Sign in</title><link rel="icon" href="/favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="/styles.css" /></head>
+  <body class="auth-page">
+    <main class="auth-shell"><header class="auth-intro"><p class="eyebrow">Private mail, briefly held</p><h1>KwikEmail</h1><p id="loginCopy">Sign in to manage your inboxes.</p></header><section class="auth-card" aria-labelledby="loginTitle"><p class="step-number">01 / Access</p><h2 id="loginTitle">Admin sign in</h2><p id="firstRunHint" class="note" hidden>First run uses the temporary password <strong>123456</strong>. Enter it below, then replace it immediately.</p><form id="loginForm"><label for="password">Admin password</label><input id="password" name="password" type="password" autocomplete="current-password" required /><button id="loginButton" type="submit">Continue</button></form><p id="status" class="inline-error" role="status"></p></section></main>
+    <script>
+      const status = document.getElementById("status");
+      fetch("/setup/status").then((response) => response.json()).then((state) => { document.getElementById("firstRunHint").hidden = state.passwordChanged; document.getElementById("loginCopy").textContent = state.passwordChanged ? "Sign in to manage your inboxes." : "Sign in once, then secure this installation."; }).catch(() => {});
+      document.getElementById("loginForm").addEventListener("submit", async (event) => { event.preventDefault(); const button = document.getElementById("loginButton"); button.disabled = true; status.textContent = ""; try { const response = await fetch("/login", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(event.currentTarget)) }); if (!response.ok) throw new Error(response.status === 429 ? "Too many attempts. Wait a minute and try again." : "That password was not accepted."); const result = await response.json(); location.href = result.passwordChanged ? "/" : "/setup.html"; } catch (error) { status.textContent = error.message; button.disabled = false; } });
+    </script>
+  </body>
+</html>

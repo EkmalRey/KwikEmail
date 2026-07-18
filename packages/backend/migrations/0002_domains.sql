@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS domains (
+  name TEXT PRIMARY KEY,
+  enabled INTEGER NOT NULL DEFAULT 1,
+  created_at INTEGER NOT NULL
+);

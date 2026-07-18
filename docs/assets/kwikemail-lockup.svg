@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+  <title id="title">KwikEmail</title>
+  <desc id="desc">KwikEmail wordmark with a cut K routing symbol.</desc>
+  <rect width="112" height="112" y="4" rx="26" fill="#1d1b17"/>
+  <path fill="#fffdf8" d="M25 25h18v25l23-25h22L61 54l28 36H67L48 65l-5 5v20H25z"/>
+  <path fill="#ef5b3f" d="M73 52h18L77 66H59z"/>
+  <text x="140" y="77" fill="#1d1b17" font-family="Georgia,serif" font-size="54" font-weight="700" letter-spacing="-2">KwikEmail</text>
+</svg>

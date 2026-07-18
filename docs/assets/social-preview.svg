@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">KwikEmail</title>
+  <desc id="desc">Disposable inboxes on your domains, live at the edge and archived at home.</desc>
+  <rect width="1280" height="640" fill="#eee9df"/>
+  <path d="M0 90h1280M0 550h1280M90 0v640M1190 0v640" stroke="#d4cdbf"/>
+  <g transform="translate(118 118)">
+    <rect width="104" height="104" rx="24" fill="#1d1b17"/>
+    <path fill="#fffdf8" d="M23 22h18v24l22-24h21L58 51l27 34H64L46 61l-5 5v19H23z"/>
+    <path fill="#ef5b3f" d="M69 49h18L73 63H55z"/>
+  </g>
+  <text x="118" y="310" fill="#1d1b17" font-family="Georgia,serif" font-size="102" font-weight="700" letter-spacing="-5">KwikEmail</text>
+  <text x="122" y="380" fill="#5e5a52" font-family="Arial,sans-serif" font-size="30">DISPOSABLE INBOXES ON YOUR DOMAINS</text>
+  <text x="122" y="436" fill="#1d1b17" font-family="Arial,sans-serif" font-size="26">Live at the edge. Archived at home.</text>
+  <g transform="translate(865 145)">
+    <rect width="285" height="350" rx="20" fill="#1d1b17"/>
+    <text x="28" y="48" fill="#a8a197" font-family="monospace" font-size="14">MAIL ROUTE / ACTIVE</text>
+    <path d="M32 94h126" stroke="#fffdf8" stroke-width="2"/>
+    <circle cx="210" cy="94" r="7" fill="#16a34a"/>
+    <text x="32" y="134" fill="#fffdf8" font-family="monospace" font-size="17">hello@example.com</text>
+    <text x="32" y="166" fill="#a8a197" font-family="monospace" font-size="14">3 messages / 1 unread</text>
+    <path d="M32 212h221M32 258h221M32 304h221" stroke="#494640"/>
+    <path d="M224 75h28l-22 22h-28z" fill="#ef5b3f"/>
+  </g>
+  <text x="118" y="585" fill="#6c675e" font-family="monospace" font-size="16">CLOUDFLARE EMAIL ROUTING + D1 + LOCAL SQLITE</text>
+</svg>

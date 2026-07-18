@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Private disposable inboxes, archived at home." />
+    <title>KwikEmail</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="dashboard view-addresses">
+    <a class="skip-link" href="#inboxContent">Skip to email content</a>
+    <aside class="sidebar" aria-label="Inbox navigation">
+      <header class="sidebar-head"><div class="sidebar-brand"><img src="/favicon.svg" alt="" />KwikEmail</div><button id="accountsBtn" class="text-button" type="button">Accounts</button></header>
+      <label class="field-label" for="accountSelect">Account</label><select id="accountSelect" class="sidebar-select" aria-label="Account"></select>
+      <label class="field-label" for="domainSelect">Domain</label><select id="domainSelect" class="sidebar-select" aria-label="Domain"></select>
+      <div class="sidebar-create"><label class="sr-only" for="newLocal">New address local part</label><input id="newLocal" type="text" placeholder="new address" autocomplete="off" /><button id="createAddr" type="button" aria-label="Create address">+</button></div>
+      <p id="addressError" class="inline-error" role="status"></p>
+      <ul id="addressList" class="sidebar-list"></ul>
+      <div class="sidebar-footer">
+        <div class="m-row"><span class="m-label">Requests</span><span id="mReqs" class="m-val">--</span></div><div class="m-row"><span class="m-label">Emails</span><span id="mReads" class="m-val">--</span></div><div class="m-row"><span class="m-label">Addresses</span><span id="mWrites" class="m-val">--</span></div><div class="m-row"><span class="m-label">Storage</span><span id="mStorage" class="m-val">--</span></div><div class="m-row"><span class="m-label">API left</span><span id="mBudget" class="m-val">--</span></div><div class="sidebar-settings"><button id="settingsBtn" class="text-button" type="button">Settings</button></div>
+      </div>
+    </aside>
+    <section class="list-panel" aria-label="Messages"><div class="list-header"><button id="backAddresses" class="mobile-back" type="button">Addresses</button><span id="listHeader">Select an address</span><span id="listUnread" class="list-unread" hidden></span><span id="pollCount" class="list-poll"></span><button id="purgeBtn" class="list-purge" type="button" hidden>Purge</button></div><ul id="emailList" class="list-items"></ul></section>
+    <main id="inboxContent" class="content-panel"><button id="backMessages" class="mobile-back content-back" type="button">Messages</button><div id="contentEmpty" class="content-empty">No email selected</div><article id="contentBody" class="content-body" hidden><div class="content-meta"><div class="meta-row"><span class="meta-label">From</span><span id="cFrom" class="meta-val"></span></div><div class="meta-row"><span class="meta-label">Subject</span><span id="cSubject" class="meta-val"></span></div><div class="meta-row"><span class="meta-label">Date</span><span id="cDate" class="meta-val"></span></div></div><pre id="cBody" class="content-text"></pre></article></main>
+    <aside id="accountsPanel" class="control-panel" hidden aria-label="Accounts"><header class="control-head"><div><p class="eyebrow">Control panel</p><h1>Accounts</h1></div><button id="closeAccounts" class="text-button" type="button">Close</button></header><div id="accountsList"></div><a class="button-link" href="/setup.html?add=1">Add another account</a></aside>
+    <aside id="settingsPanel" class="control-panel" hidden aria-label="Settings"><header class="control-head"><div><p class="eyebrow">Control panel</p><h1>Settings</h1></div><button id="closeSettings" class="text-button" type="button">Close</button></header><form id="passwordForm" class="settings-form"><h2>Change password</h2><label for="currentPassword">Current password</label><input id="currentPassword" name="currentPassword" type="password" autocomplete="current-password" required /><label for="newPassword">New password</label><input id="newPassword" name="newPassword" type="password" autocomplete="new-password" minlength="10" required /><p class="field-help">At least 10 characters.</p><label for="passwordConfirmation">Confirm new password</label><input id="passwordConfirmation" name="confirmation" type="password" autocomplete="new-password" minlength="10" required /><button type="submit">Change password</button><p class="inline-error" role="status"></p></form><form id="logoutForm" class="settings-logout" action="/logout" method="post"><button class="danger-button" type="submit">Log out</button></form></aside>
+    <div id="toast" class="toast" role="status"></div><script src="/app.js"></script>
+  </body>
+</html>

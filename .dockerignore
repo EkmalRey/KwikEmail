@@ -1,0 +1,15 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+data
+.data
+**/node_modules
+**/.wrangler
+**/.dev.vars
+**/.test-dist
+**/*.log
+**/*.sqlite
+**/*.sqlite-*
+.DS_Store
